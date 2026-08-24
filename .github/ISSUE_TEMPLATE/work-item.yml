@@ -1,0 +1,67 @@
+name: Work item
+description: 创建 Epic、Work 或 Spike；提交后自动进入统一 Project 的 Inbox
+projects:
+  - "KngZhi/1"
+body:
+  - type: dropdown
+    id: work-type
+    attributes:
+      label: Type / 类型
+      description: 选择这项工作的层级。
+      options:
+        - Work
+        - Epic
+        - Spike
+      default: 0
+    validations:
+      required: true
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome / 目标结果
+      description: 完成后应该产生什么可验证的结果？
+      placeholder: 用一两句话描述最终结果。
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context / 背景
+      description: 为什么要做？当前存在什么问题或限制？
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope / 范围
+      description: 这项工作包含什么；必要时也写明不包含什么。
+      placeholder: |
+        In scope:
+        -
+
+        Out of scope:
+        -
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria / 验收标准
+      description: 使用可检查的清单描述何时算完成。
+      placeholder: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References / 参考资料
+      description: 相关 Issue、PR、日志、截图或文档；没有可以留空。
+    validations:
+      required: false
